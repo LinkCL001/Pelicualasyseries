@@ -16,22 +16,27 @@ CREATE TABLE usuarios (
 );
 
 CREATE TABLE peliculas (
-    id_pelicula SERIAL,
+    id SERIAL,
     titulo VARCHAR(25),
     genero VARCHAR(25),
     precio_de_arriendo VARCHAR(25),
-    duracion VARCHAR(25),
-    FOREIGN KEY (id_pelicula) REFERENCES usuarios (id)
+    duracion VARCHAR(25)
 );
 
 CREATE TABLE series (
-    id_serie SERIAL,
+    id SERIAL,
     titulo VARCHAR(25),
     genero VARCHAR(25),
     precio_de_arriendo VARCHAR(25),
-    temporadas VARCHAR(25),
-    FOREIGN KEY (id_serie) REFERENCES usuarios (id)
+    temporadas VARCHAR(25)
 );
+
+CREATE TABLE prestamos (
+    id_arriendo INT,
+    tipo_arriendo VARCHAR(25),
+    id_usuario REFERENCES usuarios (id)
+);
+
 
 --npm init -y
 --npm i --save pg

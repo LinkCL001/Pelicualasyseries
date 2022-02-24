@@ -32,7 +32,7 @@ app.put("/usuario/:id", async (req, res) => {
   res.send(respuesta);
 });
 
-app.delete("/canal/:id", async (req, res) => {
+app.delete("/usuario/:id", async (req, res) => {
   const { id } = req.params;
   const respuesta = await deleteUsuario(id);
   respuesta > 0
